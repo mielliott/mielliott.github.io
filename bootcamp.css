@@ -1,0 +1,85 @@
+/*
+ * Globals
+ */
+
+body {
+  font-family: Georgia, Times, sans-serif;
+  color: #555;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: Georgia, Verdana, serif;
+  font-weight: normal;
+  color: #444;
+}
+
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 980px;
+  }
+}
+
+/* 
+ * Set a background color for the body
+*/
+
+body {
+  background-color: #fafaee;
+}
+
+/*
+ * Blog name and description
+ */
+
+.header-bar {
+  padding: 8px 0;
+  color: #777777;
+  text-align: center;
+  background-color: #f2f2cc;
+  border-bottom: 3px solid #e5e5e5;
+}
+.title {
+  margin-top: 30px;
+  margin-bottom: 48px;
+  font-size: 54px;
+  font-weight: normal;
+  text-align: center;
+}
+.body {
+  font-size: 16px;
+  color: #999;
+}
+
+.my-text {
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,255,.1);
+          box-shadow: inset 0 -2px 5px rgba(0,0,255,.1);
+
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 8px;
+  margin-left: 8px;
+  margin-bottom: 32px;
+}
+
+/*
+ * Footer
+ */
+
+.footer {
+  padding: 32px 0;
+  color: #777777;
+  text-align: center;
+  background-color: #f2f2cc;
+  border-top: 3px solid #e5e5e5;
+}
