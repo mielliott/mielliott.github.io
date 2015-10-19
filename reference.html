@@ -1,45 +1,79 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tiger Giraffe's Project Page">
-    <meta name="author" content="Tiger Giraffe">
-    <link rel="icon" href="icon.ico">
+<html lang="en">
+<body class="view" >
+<div class="page">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tiger Giraffe's References Page">
+  <meta name="author" content="Tiger Giraffe">
+  <link rel="icon" href="icon.ico">
 
-    <title>Tiger Giraffe Project Reference Page</title>
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="bootcamp.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet">
 
   </head>
-
   <body>
 
-    <header class="header-bar">
-      <a name="top"></a>
-      <p>Tiger Giraffe Project Reference Page</p>
-    </header>
+  <header class="header-bar">
+    <a name="top"></a>
+    <p></p>
+  </header>
 
-    <!-- Title Splash -->
-    <div class="container">
-      <h1 class="title">Tiger Giraffe</h1>
-    </div>  
-
-    <div class="container">
-      <text>this is the reference page</text>
+  <!-- Title Splash -->
+  <!--<div class="container">-->
+    <div class="title">
+    <h1 class="title">References</h1>
+    <h6></h6>
     </div>
+  <!--</div>-->
 
-    <!-- Provide a sorely-needed link back to the top of the page -->
-    <footer class="footer">
-      <p>Dakota Funchess, Joey Schiavi, Kayla Pozo, Michael Elliott</p>
-      <p>mielliott@ufl.edu</p>
-      <p>
-        <a href="#top">Back to top</a>
-      </p>
-    </footer>
+  <!-- Fun quick links to stuff -->
+  <ul class="nav nav-justified nav-pills navbar">
+      <li role="presentation"><a href="index.html">Home</a></li>
+      <li role="presentation"><a href="presentation.html">Presentation</a></li>
+      <li role="presentation" class="active"><a href="#">References</a></li>
+      <li role="presentation"><a href="team.html">Team Tiger Giraffe</a></li>
+  </ul>
+
+  <!-- Body text -->
+  <div class="content">
+
+    <h3>"The Future of Anti-Aliasing"</h3>
+    <h6>eurogamer.net - <a href="http://www.eurogamer.net/articles/digital-foundry-future-of-anti-aliasing">http://www.eurogamer.net/articles/digital-foundry-future-of-anti-aliasing</a></h6>
+
+    <p>Discusses the advantages and disadvantages of the MLAA technique used in game design. MLAA tries to pattern match edges which can result in exaggerated blurring in noisy textures if it detects and edge pattern within it. MLAA is also computationally expensive but results in higher quality anti-aliased results.</p>
+
+    <h3>"Image Aliasing and Anti-aliasing"</h3>
+    <h6>telecommunications.com - <a href="http://www.telacommunications.com/nutshell/pixelation.htm">http://www.telacommunications.com/nutshell/pixelation.htm</a></h6>
+
+    <p>This source defines what spatial anti-aliasing is and why it is used. It describes pixels in respect to resolution. It talks about how enough dots aren’t available to create complex shapes and how this leads to “jaggies.” Explains anti-aliasing as tricking the eye into seeing a smoother shape. Provides images of shapes with non anti-aliased and anti-aliased versions.</p>
+
+    <h3>"Exact Antialiasing of Textured Terrain Models"</h3>
+    <h6>The Visual Computer - <a href="http://www.cs.tau.ac.il/~dcor/online_papers/papers/exact-aa97.pdf">http://www.cs.tau.ac.il/~dcor/online_papers/papers/exact-aa97.pdf</a></h6>
+
+    <p>This reference is a paper that proposes and explores a more efficient implementation of antialiasing in texture modeling. Assessed in both spatial and temporal domains. The proposal for a more efficient technique of anti aliasing is one that is within the algorithm that renders textured terrains. As well, the resource breaks down the paper into coherent and relative sections including a review of antialiasing methods, a survey of previous works, algorithm cost, &c. The paper also includes a number of diagrams and photos of the technique being implemented and the results it produced.</p>
+
+    <h3>"Quadrature Prefiltering for High Quality Antialiasing"</h3>
+    <h6>Brian Guenter, Jack Tumblin - <a href="http://www.cs.northwestern.edu/~jet/Publications/quadfilt95.pdf">http://www.cs.northwestern.edu/~jet/Publications/quadfilt95.pdf</a></h6>
+
+    <p>This article highlights the challenges and downfalls of typical antialiasing algorithms, breaking them down into the classifications of prefiltering, uniform super sampling, and stochastic sampling. It then offers a lightweight yet visually pleasing solution to antialiasing - Quadrature Prefiltering. This method takes advantage of the way our eyes perceive and prioritizes CPU power to the more significant factors.</p>
+
+  </div>
+
+  <!-- Provide a link back to the top of the page -->
+  <footer class="footer">
+    <p>Dakota Funchess, Joey Schiavi, Kayla Pozo, Michael Elliott</p>
+    <p>tigergiraffe@cats.com</p>
+    <p>
+    <a href="#top">Back to top</a>
+    </p>
+  </footer>
   </body>
+</div>
+</body>
 </html>
