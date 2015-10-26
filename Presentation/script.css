@@ -1,0 +1,16 @@
+
+/*
+ * Styles that only apply to the script page
+ */
+
+body {
+}
+
+body img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  -webkit-box-shadow: 0 -2px 5px rgba(0,0,255,.1);
+          box-shadow: 0 -2px 5px rgba(0,0,255,.1);
+}

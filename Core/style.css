@@ -87,10 +87,11 @@ color: #dadaae;
   margin-left: 8px;
   margin-bottom: 32px;
 }
-
 .bio .portrait {
   width: 180px;
   height: 180px;
+  vertical-align: middle;
+  text-align: center;
   border-radius: 90px;
   -webkit-border-radius: 90px;
   -moz-border-radius: 90px;
