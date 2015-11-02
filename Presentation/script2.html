@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<!-- Custom styles for this template -->
+<link href="script.css" rel="stylesheet">
+
+<center>
+  <h3>Spatial Antialiasing</h3>
+  <h6>11/2/2015</h6>
+</center>
+<p>
+  Aliasing is the phenomenon that occurs when high frequency signals are sampled at a lower rate creating a visual distortion in the image. Typically the image will tend to have jagged edges as opposed to smoother ones. This is due to the discrete nature of the image raster which has a finite frequency range thus creating a bound on the set of represented signals from those that are continuous from the entity being sampled. This effect is much more noticeable in animations than in still images.
+</p>
+<img src="aliased-triangle.png"></img>
+<img src="aliased-shapes.png"></img>
+<p>
+  Antialiasing techniques tend to fall under one of two categories: supersampling and "filtering". 
+</p>
+<p>
+  The practice of supersampling uses the idea of a filter, the basic idea is that an image is sampled at an exponentially high output resolution and translated through low-pass filters, used to keep the signals within the signal bound. Though supersampling is a common practice, it only produces images with noise less irritating than the original aliased image; this is because the filter is applied after the image has been sampled.
+</p>
+<p>
+  The other technique, which is generically dubbed "filtering", applied this filter prior to the sample and takes the signal from the continuous space. Though this approach tends to be more costly, the results are often much more favorable as the technique works in the subpixel dimension via exact area sampling.
+</p>
+<p>
+  In many cases, the latter technique has proven to be superior. One approach explored in texturing terrain uses a model of ray casting hit points on a voxelized terrain model, where 1-dimensional values can be interpreted as 3D information. 
+</p>
+<img src="antialiasing-methods.png"></img>
+
+</body>
+</html>
