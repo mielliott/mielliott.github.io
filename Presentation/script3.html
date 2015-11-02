@@ -27,6 +27,14 @@
   In many cases, the latter technique has proven to be superior. One approach explored in texturing terrain uses a model of ray casting hit points on a voxelized terrain model, where 1-dimensional values can be interpreted as 3D information. 
 </p>
 <img src="antialiasing-methods.png"></img>
+<p>
+  In combatting aliasing, there are typically two kinds of artifacts that are prevalent in the anti aliasing process: temporal aliasing and spatial aliasing. These artifacts arise during the ray casting process due to its inherent point-sampling characteristics. This is best remedied by implementing the most effective algorithm for "exact" anti aliasing. These implementations include:
+  <ul>
+    <li>Point sampling and linear interpolation</li>
+    <li>Supersampling</li>
+    <li>Area sampling</li>
+  </ul>
+</p>
 
 <h3>Overview: What is Anti Aliasing?</h3>
 <p> To be expanded...
