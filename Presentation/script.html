@@ -7,7 +7,7 @@
 
 <center>
   <h3>Spatial Antialiasing</h3>
-  <h6>11/2/2015</h6>
+  <h6>11/9/2015</h6>
 </center>
 <p>
   Aliasing is the phenomenon that occurs when high frequency signals are sampled at a lower rate creating a visual distortion in the image. Typically the image will tend to have jagged edges as opposed to smoother ones. This is due to the discrete nature of the image raster which has a finite frequency range thus creating a bound on the set of represented signals from those that are continuous from the entity being sampled. This effect is much more noticeable in animations than in still images.
@@ -27,6 +27,14 @@
   In many cases, the latter technique has proven to be superior. One approach explored in texturing terrain uses a model of ray casting hit points on a voxelized terrain model, where 1-dimensional values can be interpreted as 3D information. 
 </p>
 <img src="antialiasing-methods.png"></img>
+<p>
+  In combatting aliasing, there are typically two kinds of artifacts that are prevalent in the anti aliasing process: temporal aliasing and spatial aliasing. These artifacts arise during the ray casting process due to its inherent point-sampling characteristics. This is best remedied by implementing the most effective algorithm for "exact" anti aliasing. These implementations include:
+  <ul>
+    <li>Point sampling and linear interpolation</li>
+    <li>Supersampling</li>
+    <li>Area sampling</li>
+  </ul>
+</p>
 
 <h3>Overview: What is Anti Aliasing?</h3>
 <p> To be expanded...
@@ -44,6 +52,16 @@
     <li>Post Processing (PPAA)</li>
   </ul>
 </p>
+
+<h3>Supersampling</h3>
+<p>Coming soon!</p>
+
+<h3>Multisampling</h3>
+<p>Another specialized implementation of supersampling is the practice of Multisample anti-aliasing (MSAA), also commonly known as Multisampling. Multisampling refers to a specific optimization of supersampling where the rendering machine compute the image according to a per pixel basis where only the z-values, or depth, and stencil values are supersampled. An even broader definition of the term Multisampling is one which refers to a specific situation where only a limited or selected number of components in the final rendered image are supersampled. So basically, Multi-sampling only utilizes the initial sample for all sub-samples and it even has its own set of different mixtures and flavors.
+In comparison to supersampling, the results of Mulitsampling can provide an image that can fall anywhere on the spectrum of equivalent quality with improved performance or higher quality with equivalent performance. Different Multisampling qualities include 2x, 4x, 8x, and even 16x MSAA where one can assume that with an increase in quality yields slower performance.</p>
+<p>Two common practices of Multisampling include point sampling and area sampling. Point sampling only applies to those discrete points that fall within the mechanism's rendering primitive. Though the geometry of the rendered area will remain correct, making the primitive resident points the only points to be exclusively Multisampled will result in lower quality filtering because not all points within the image fragment are being sampled. On the other side of that same coin, area sampling will take into account the entire area of that image fragment and utilize an amount of Multisampled points proportionate the area of said fragment. This remedies the lower quality filtering that occurs in point sampling, but will result in aliasing artifacts since it samples points outside the rendering primitive.</p>
+<p>So, how are these points being sampled? Well again, there is a few different approaches that are commonly used in regards to Multisampling. In a regular grid sampling pattern, locations are evenly spaced throughout the pixel. Though it is easy to implement, the number of evenly spaced sampling locations yield an expensive cost to performance. To mitigate this performance cost, sparse regular grid patterns were created such that a subset of points are chosen from the regular grid. This smaller set of sampled points yields a much less computationally expensive implementation. Similar to the sparse regular grid is a stochastic sampling pattern where the sampling locations are randomly distributed throughout the pixel. Though this also has an improved performance cost due to the smaller set of sampling locations, being that the nature of this practice is randomly determined, evaluation of certain elements within the pixel can become unclear when compared to those methods that utilize a regular grid.</p>
+<p>A common issue that arises when discussing the benefits between Multisampling and Supersampling is the issue of alpha testing and how transparent components are handled when rendering the image. Alpha testing is the process in which certain translucent pixels that do not meet a certain criteria or fall within a specified boundary are rejected and not rendered to the image. Basically, if the alpha value of the pixel fragment does not fall within a rendering range than it is ignored and more or less presented as invisible to the user. Though this does not cause the image quality to suffer or become worse it just yields the same result as if the anti-aliasing was not applied. A solution to this issue is a practice known as alpha blending where there is a smooth transition between visible and transparent pixel fragments in the rendered image. The only stipulation of alpha blending is that it must be applied back-to-front, and typically images are rendered front-to-back, simply because the elements that appear to be in the back of the image must be visible through the ones in the front. Thus, alpha blending, when paired with Multisampling is a superior technique in rendering image quality, but yields a greater cost performance.</P.
 
 </body>
 </html>
