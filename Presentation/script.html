@@ -52,8 +52,9 @@
     <li>Post Processing (PPAA)</li>
   </ul>
 </p>
-
+<center>
 <h3>Supersampling</h3>
+</center>
 <p>Super-sampling combats aliasing by taking multiple color samples at several instances inside the pixel, and an average color value is calculated. By doing so one can more precisely represent a detailed image. So the first essential element of super-sampling is that extra samples are used to increase the density of image information. One can see this as taking sub-samples at the pixel level. Therefore, instead of one single central sample per-pixel, super-sampling techniques utilize several samples per pixel. </p>
 <p>Ordered Grid Super-Sampling is the most common type of super-sampling anti-aliasing. The name itself is descriptive of the sub-sample positions within a given pixel. The extra samples are positioned in an ordered grid shape. The sub-samples are aligned horizontally and vertically, creating a matrix of points. These sub-samples are located inside the original pixel in a regular pattern. </p>
 
@@ -63,6 +64,29 @@ In comparison to supersampling, the results of Mulitsampling can provide an imag
 <p>Two common practices of Multisampling include point sampling and area sampling. Point sampling only applies to those discrete points that fall within the mechanism's rendering primitive. Though the geometry of the rendered area will remain correct, making the primitive resident points the only points to be exclusively Multisampled will result in lower quality filtering because not all points within the image fragment are being sampled. On the other side of that same coin, area sampling will take into account the entire area of that image fragment and utilize an amount of Multisampled points proportionate the area of said fragment. This remedies the lower quality filtering that occurs in point sampling, but will result in aliasing artifacts since it samples points outside the rendering primitive.</p>
 <p>So, how are these points being sampled? Well again, there is a few different approaches that are commonly used in regards to Multisampling. In a regular grid sampling pattern, locations are evenly spaced throughout the pixel. Though it is easy to implement, the number of evenly spaced sampling locations yield an expensive cost to performance. To mitigate this performance cost, sparse regular grid patterns were created such that a subset of points are chosen from the regular grid. This smaller set of sampled points yields a much less computationally expensive implementation. Similar to the sparse regular grid is a stochastic sampling pattern where the sampling locations are randomly distributed throughout the pixel. Though this also has an improved performance cost due to the smaller set of sampling locations, being that the nature of this practice is randomly determined, evaluation of certain elements within the pixel can become unclear when compared to those methods that utilize a regular grid.</p>
 <p>A common issue that arises when discussing the benefits between Multisampling and Supersampling is the issue of alpha testing and how transparent components are handled when rendering the image. Alpha testing is the process in which certain translucent pixels that do not meet a certain criteria or fall within a specified boundary are rejected and not rendered to the image. Basically, if the alpha value of the pixel fragment does not fall within a rendering range than it is ignored and more or less presented as invisible to the user. Though this does not cause the image quality to suffer or become worse it just yields the same result as if the anti-aliasing was not applied. A solution to this issue is a practice known as alpha blending where there is a smooth transition between visible and transparent pixel fragments in the rendered image. The only stipulation of alpha blending is that it must be applied back-to-front, and typically images are rendered front-to-back, simply because the elements that appear to be in the back of the image must be visible through the ones in the front. Thus, alpha blending, when paired with Multisampling is a superior technique in rendering image quality, but yields a greater cost performance.</P.
+
+<center>
+<h3>Post-Processed Anti-Aliasing</h3>
+</center>
+
+<h2>MLAA (Morphological AA) and FXAA (Fast Approximate AA)</h2>
+
+<p>Blur filters: First detects contrasts (edges) and blurs along the gradiant. Cheapest form of AA, commonly used in console versions of games.</p>
+<p>Pro’s : Cheapest, greatly reduces jagged edges that cover alpha textures, also covers alpha textures</p>
+<p>Con’s: Blurs everything including textures</p>
+
+<h2>MLAA Algorithm/Methodology</h2>
+<p>  
+  <ul>
+    <ul style="list-style-type:circle">
+      <li>1.	Find discontinuities between pixels in a given image.</li>
+      <li>2.	Identify U-shaped, Z-shaped, L-shaped patterns</li>
+      <li>3.	Blend colors in the neighborhood of these patterns</li>
+    </ul>
+  </ul>
+</p>
+
+
 
 </body>
 </html>
